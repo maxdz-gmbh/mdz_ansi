@@ -57,3 +57,24 @@ Some CRT functions are inlined in Visual C++ 2015. Therefore if you are using Pl
 **11. Unicode "surrogate-pairs" awareness:** 2-byte Unicode strings correctly process/distinguish "surrogate-pairs" as 1 Unicode symbol.
 
 **12. Asynchronous execution:** almost all functions can be executed asynchronously
+
+## Performance Comparison
+
+To be added...
+
+## mdz_ansi Overview
+
+Our **ansi** string implementation is on par or faster than corresponding [Glib] functions and significantly faster than [STL] implementations, especially on larger sizes.<br>
+(please refer to comparison tables in [Performance Comparison])
+
+**ansi** is implemented in defensive programming manner with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
+
+Several usage-scenarios are possible:
+- low-level - raw C interface, using *mdz_ansi.h* header file
+- higher-level - using *MdzAnsi* C++ "wrapper" around *mdz_ansi.h* functions
+
+Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
+
+[mdz_ansi Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_ansi-overview
+[Glib]: https://en.wikipedia.org/wiki/GLib
+[STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
