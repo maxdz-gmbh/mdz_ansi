@@ -175,15 +175,9 @@ int main(int argc, char* argv[])
   
   MdzAnsi oAnsi; // initialize ansi-string
 
-  // reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5.
-  
   bool bRet = oAnsi.reserveAndInit(5, 'a'); // "aaaaa" after this call
   
-  // insert 'b' in front position with auto-reservation if necessary
-  
   bRet = oAnsi.insertAndReserve(0, 'b'); // "baaaaa" after this call
-  
-  // append string with "cde" with auto-reservation if necessary
   
   bRet = oAnsi.appendAndReserve("cde"); // "baaaaacde" after this call
   
