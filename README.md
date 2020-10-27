@@ -78,3 +78,4 @@ Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed f
 [mdz_ansi Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_ansi-overview
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
+[Performance Comparison]: #performance-comparison
