@@ -32,7 +32,7 @@ Some CRT functions are inlined in Visual C++ 2015. Therefore if you are using Pl
 [mdz_string]: https://github.com/maxdz-gmbh/mdz_string
 [maxdz Software GmbH]: https://maxdz.com/
 
-## mdz_containers Advantages
+## mdz_string Advantages
 
 **1. Very high portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
 
