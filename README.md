@@ -63,6 +63,12 @@ Some CRT functions are inlined in Visual C++ 2015. Therefore if you are using Pl
 To be added...
 
 ## mdz_ansi Overview
+Wiki: [mdz_ansi Wiki]<br>
+file: *"mdz_ansi.h"*
+
+Please take a look at *"mdz_asni.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
+
+[mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_ascii-overview
 
 Our **ansi** string implementation is on par or faster than corresponding [Glib] functions and significantly faster than [STL] implementations, especially on larger sizes.<br>
 (please refer to comparison tables in [Performance Comparison])
@@ -135,17 +141,17 @@ int main(int argc, char* argv[])
   
   mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
 
-  // reserve 10 elements, set them into 'a'. After this Capacity and Size of vector is 10.
+  // reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5.
   
-  bRet = mdz_ansi_reserveAndInit(pAnsi, 10, 'a'); 
+  bRet = mdz_ansi_reserveAndInit(pAnsi, 5, 'a'); // "aaaaa" after this call
   
   // insert 'b' in front position with auto-reservation if necessary
   
-  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true);
+  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true); // "baaaaa" after this call
   
   // append string with "cde" with auto-reservation if necessary
   
-  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true);
+  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true); // "baaaaacde" after this call
   
   ...
   
@@ -154,3 +160,78 @@ int main(int argc, char* argv[])
   ...
 }
 ```
+
+#### Code Example (higher-level use)
+
+This is an example above using *MdzAnsi* C++ "wrapper":
+
+```
+#include <mdz_string.h>
+#include <MdzVector.h>
+
+int main(int argc, char* argv[])
+{
+  mdz_string_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  
+  MdzAnsi oAnsi; // initialize ansi-string
+
+  // reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5.
+  
+  bool bRet = oAnsi.reserveAndInit(5, 'a'); // "aaaaa" after this call
+  
+  // insert 'b' in front position with auto-reservation if necessary
+  
+  bRet = oAnsi.insertAndReserve(0, 'b'); // "baaaaa" after this call
+  
+  // append string with "cde" with auto-reservation if necessary
+  
+  bRet = oAnsi.appendAndReserve("cde"); // "baaaaacde" after this call
+  
+  ...
+}
+```
+
+## mdz_wchar Overview
+Wiki: [mdz_wchar Wiki]<br>
+file: *"mdz_wchar.h"*
+
+Please take a look at *"mdz_wchar.h"* file or [mdz_wchar Wiki] site for detailed functions descriptions.
+
+[mdz_wchar Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_wchar-overview
+
+## mdz_utf8 Overview
+Wiki: [mdz_utf8 Wiki]<br>
+file: *"mdz_utf8.h"*
+
+Please take a look at *"mdz_utf8.h"* file or [mdz_utf8 Wiki] site for detailed functions descriptions.
+
+[mdz_utf8 Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_utf8-overview
+
+## mdz_utf16 Overview
+Wiki: [mdz_utf16 Wiki]<br>
+file: *"mdz_utf16.h"*
+
+Please take a look at *"mdz_utf16.h"* file or [mdz_utf16 Wiki] site for detailed functions descriptions.
+
+[mdz_utf16 Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_utf16-overview
+
+## mdz_utf32 Overview
+Wiki: [mdz_utf32 Wiki]<br>
+file: *"mdz_utf32.h"*
+
+Please take a look at *"mdz_utf32.h"* file or [mdz_utf32 Wiki] site for detailed functions descriptions.
+
+[mdz_utf32 Wiki]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_utf32-overview
+
+## Licensing info
+
+Use of **mdz_containers** library is regulated by license agreement in *LICENSE.txt*
+
+Basically private non-commercial "test" usage is unrestricted. Commercial usage of library (incl. its source code) will be regulated by according license agreement.
+
+## Credits
+[Diana Pukhlitska] - participation in writing unit-tests (VC++, Windows) and performance-tests (VC++, Windows)<br>
+[Oleksiy Dzyubenko] - participation in writing unit-tests (VC++, Windows)
+
+[Diana Pukhlitska]: https://github.com/PukhlitskaDi
+[Oleksiy Dzyubenko]: https://github.com/dzyubenko
