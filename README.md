@@ -224,8 +224,10 @@ Use of **mdz_containers** library is regulated by license agreement in *LICENSE.
 Basically private non-commercial "test" usage is unrestricted. Commercial usage of library (incl. its source code) will be regulated by according license agreement.
 
 ## Credits
-[Diana Pukhlitska] - participation in writing unit-tests (VC++, Windows) and performance-tests (VC++, Windows)<br>
-[Oleksiy Dzyubenko] - participation in writing unit-tests (VC++, Windows)
+[Maksym Dzyubenko] - library implementation, porting on platforms, participation in unit-tests and performance-tests
+[Diana Pukhlitska] - participation in unit-tests (VC++, Windows) and performance-tests (VC++, Windows)<br>
+[Oleksiy Dzyubenko] - participation in unit-tests (VC++, Windows)
 
 [Diana Pukhlitska]: https://github.com/PukhlitskaDi
 [Oleksiy Dzyubenko]: https://github.com/dzyubenko
+[Maksym Dzyubenko]: https://github.com/mdzyubenko
