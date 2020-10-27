@@ -14,7 +14,7 @@
 
 ## mdz_string Overview
 
-[mdz_string] - is a very lightweight, versatile and speedy C  library, supporting ASCII/ANSI, UTF8, UTF16, UTF32, wchar strings. Source code of library is portable, conforms to ANSI C 89/90 Standard.
+[mdz_string] - is a very lightweight, versatile and speedy C  library developed by [maxdz Software GmbH], supporting ASCII/ANSI, UTF8, UTF16, UTF32, wchar strings. Source code of library is portable, conforms to ANSI C 89/90 Standard.
 
 **Linux** binaries are built against Linux Kernel 2.6.18 - and thus should be compatible with Debian (from ver. 4.0), Ubuntu (from ver. 8.04), Fedora (from ver. 9)
 
@@ -31,3 +31,29 @@ Some CRT functions are inlined in Visual C++ 2015. Therefore if you are using Pl
 
 [mdz_string]: https://github.com/maxdz-gmbh/mdz_string
 [maxdz Software GmbH]: https://maxdz.com/
+
+## mdz_containers Advantages
+
+**1. Very high portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
+
+**2. Very little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
+
+**3. Very fast:** comparison tables for *mdz_ansi_find()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
+
+**4. Flexibilty:** nearly all functions contain not only "left position" but also "right position" parameters to limit processed area from right. "ANSI" string contains more functions than according *STL*, *boost* or *glib* analogs have.
+
+**5. Extended error-checking:** all functions preserve internal error-code pointing the problem. It is possible to use strict error-checking (when all preserved error-codes should be *MDZ_ERROR_NONE*) or "relaxed"-checking - when only returned *mdz_false* will indicate error.
+
+**6. Extended control:** containers do only explicit operations. It means for example, when "insert" function is called with auto-reservation flag set in *mdz_false* - it will return error if there is not enough capacity in container. No implicit reservations will be made.
+
+**7. Attached usage:** containers should not necessarily use dynamically-allocated memory - which may be not available on your embedded system (or if malloc()/free() are forbidden to use in you safety-critical software). Just attach container/data to your statically-allocated memory (similarly to "placement new" in C++) and use all containers functionality.
+
+**8. Unicode support:** UTF-8, UTF-16, UTF-32 are supported.
+
+**9. wchar_t support:** also wchar_t strings are supporte, with 2 and 4 bytes-large *wchar_t* characters.
+
+**10. Endianness-aware containers:** utf16 and utf32 containers are endiannes-aware thus may be used to produce and manipulate strings with pre-defined endianness even if endianness of host differs.
+
+**11. Unicode "surrogate-pairs" awareness:** 2-byte Unicode strings correctly process/distinguish "surrogate-pairs" as 1 Unicode symbol.
+
+**12. Asynchronous execution:** almost all functions can be executed asynchronously
