@@ -79,3 +79,78 @@ Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed f
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
 [Performance Comparison]: #performance-comparison
+
+#### Code Example (low-level use)
+
+*mdz_string_init()* with license information should be called for library initialization before any subsequent calls:
+
+```
+#include <mdz_string.h>
+
+int main(int argc, char* argv[])
+{
+  mdz_bool bRet = mdz_string_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  ...
+}
+```
+
+[mdz_ansi_create]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_ansi_create
+[mdz_ansi_destroy]: https://github.com/maxdz-gmbh/mdz_containers/wiki/mdz_ansi_destroy
+
+After library initialization call *[mdz_ansi_create]*() for **ansi** creation. There should be also symmetric *[mdz_ansi_destroy]*() call for every create, otherwise allocated for **ansi** memory remains occupied:
+
+```
+#include <mdz_string.h>
+#include <mdz_ansi.h>
+
+int main(int argc, char* argv[])
+{
+  mdz_bool bRet = mdz_string_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  
+  // initialize pAnsi
+  
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+  ...
+  ...
+  // use pAnsi
+  ...
+  ...
+  // destroy pAnsi
+  
+  mdz_ansi_destroy(&pAnsi); // after this pAnsi should be NULL
+  
+  ...
+}
+```
+
+Use *mdz_Ansi** pointer for subsequent library calls:
+
+```
+#include <mdz_string.h>
+#include <mdz_ansi.h>
+
+int main(int argc, char* argv[])
+{
+  mdz_bool bRet = mdz_string_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+
+  // reserve 10 elements, set them into 'a'. After this Capacity and Size of vector is 10.
+  
+  bRet = mdz_ansi_reserveAndInit(pAnsi, 10, 'a'); 
+  
+  // insert 'b' in front position with auto-reservation if necessary
+  
+  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true);
+  
+  // append string with "cde" with auto-reservation if necessary
+  
+  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true);
+  
+  ...
+  
+  mdz_ansi_destroy(&pAnsi);
+  
+  ...
+}
+```
