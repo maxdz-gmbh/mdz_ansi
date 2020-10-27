@@ -16,13 +16,14 @@
 
 [mdz_string] - is a very lightweight, versatile and speedy C  library developed by [maxdz Software GmbH], supporting ASCII/ANSI, UTF8, UTF16, UTF32, wchar strings. Source code of library is portable, conforms to ANSI C 89/90 Standard.
 
+Only shared/dynamically loaded libraries (*.so* and *.dll* files with import libraries) are available for evaluation testing purposes. Static libraries are covered by our commercial licenses.
+
 **Linux** binaries are built against Linux Kernel 2.6.18 - and thus should be compatible with Debian (from ver. 4.0), Ubuntu (from ver. 8.04), Fedora (from ver. 9)
 
 **FreeBSD** binaries - may be used from FreeBSD ver. 7.0
 
 **Win32** binaries are built using Visual Studio Platform Toolset "v90", thus are compatible with Windows versions from Windows 2000.<br>
 **Win64** binaries are built using Visual Studio Platform Toolset "v100", thus are compatible with Windows versions from Windows XP.<br>
-Some CRT functions are inlined in Visual C++ 2015. Therefore if you are using Platform Toolset "v140" or later with *mdz_containers* Static Library - please link also with *"legacy_stdio_definitions.lib"*. It will resolve such functions.
 
 **Android** x86/armeabi-v7a binaries - may be used from Android API level 16 ("Jelly Bean" ver. 4.1.x)<br>
 **Android** x86_64/arm64-v8a binaries - may be used from Android API level 21 ("Lollipop" ver. 5.0)
