@@ -167,7 +167,7 @@ This is an example above using *MdzAnsi* C++ "wrapper":
 
 ```
 #include <mdz_string.h>
-#include <MdzVector.h>
+#include <MdzAnsi.h>
 
 int main(int argc, char* argv[])
 {
