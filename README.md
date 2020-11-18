@@ -14,7 +14,7 @@
 
 ## mdz_string Overview
 
-[mdz_string] - is a very lightweight, versatile and speedy C  library developed by [maxdz Software GmbH], supporting ASCII/ANSI, UTF8, UTF16, UTF32, wchar strings. Source code of library is portable, conforms to ANSI C 89/90 Standard.
+[mdz_string] - is a very lightweight, versatile and speedy C  library developed by [maxdz Software GmbH], supporting ASCII/ANSI, UTF8, UTF16, UTF32, wchar strings. Source code of library is highly-portable, conforms to ANSI C 89/90 Standard.
 
 Only shared/dynamically loaded libraries (*.so* and *.dll* files with import libraries) are available for evaluation testing purposes. Static libraries are covered by our commercial licenses.
 
