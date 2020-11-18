@@ -51,7 +51,7 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **8. Unicode support:** UTF-8, UTF-16, UTF-32 are supported.
 
-**9. wchar_t support:** also wchar_t strings are supporte, with 2 and 4 bytes-large *wchar_t* characters.
+**9. wchar_t support:** also wchar_t strings are supported, with 2 and 4 bytes-large *wchar_t* characters.
 
 **10. Endianness-aware containers:** utf16 and utf32 containers are endiannes-aware thus may be used to produce and manipulate strings with pre-defined endianness even if endianness of host differs.
 
