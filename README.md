@@ -64,6 +64,11 @@ Our **ansi** string implementation is on par or faster than corresponding [Glib]
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
+**Test license generation:** - use [mdz_ansi Test License] page for generating test license. With this license you are able to test *mdz_ansi* library during next 14 days.
+Test license data should be used in *mdz_ansi_init()* call for library initialization.
+
+**NOTE:** All 0.x releases are kind of "beta-versions" and can be used 1) only with test-license (during test period of 14 days, with necessity to re-generate license for the next 14 days test period) and 2) without expectations of interface backward-compatibility.
+
 Several usage-scenarios are possible:
 - low-level - raw C interface, using *mdz_ansi.h* header file
 - higher-level - using *MdzAnsi* C++ "wrapper" around *mdz_ansi.h* functions
@@ -72,6 +77,7 @@ Several usage-scenarios are possible:
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
 [Performance Comparison]: #performance-comparison
+[mdz_ansi Test License]: https://maxdz.com/mdz_ansi_testlicense.php
 
 #### Code Example (low-level use)
 
@@ -82,6 +88,8 @@ Several usage-scenarios are possible:
 
 int main(int argc, char* argv[])
 {
+  /* mdz_ansi library initialization using test info retrieved after license generation (see "Test license generation" above) */
+  
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   ...
 }
