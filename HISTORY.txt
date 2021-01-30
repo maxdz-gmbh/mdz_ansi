@@ -1,0 +1,52 @@
+28.01.2021 (thu): Release 0.0.1
+-------------------------------
+
+Added functions:
+
+- mdz_ansi_init
+- mdz_ansi_init_attached
+- mdz_ansi_uninit
+
+- mdz_ansi_create
+- mdz_ansi_create_attached
+- mdz_ansi_destroy
+
+- mdz_ansi_clear
+- mdz_ansi_attachData
+- mdz_ansi_reserve
+- mdz_ansi_reserveAndInit_async
+
+- mdz_ansi_capacity
+- mdz_ansi_size
+- mdz_ansi_resize
+- mdz_ansi_offsetFromStart
+- mdz_ansi_isAttachedData
+- mdz_ansi_embedSize
+
+- mdz_ansi_insert_async
+
+- mdz_ansi_findSingle_async
+- mdz_ansi_find_async
+- mdz_ansi_firstOf_async
+- mdz_ansi_firstNotOf_async
+- mdz_ansi_rfindSingle_async
+- mdz_ansi_rfind_async
+- mdz_ansi_lastOf_async
+- mdz_ansi_lastNotOf_async
+
+- mdz_ansi_removeFrom_async
+- mdz_ansi_remove_async
+
+- mdz_ansi_trimLeft_async
+- mdz_ansi_trimRight_async
+- mdz_ansi_trim_async
+
+- mdz_ansi_compare_async
+
+- mdz_ansi_replace_async
+
+- mdz_ansi_count_async
+
+- mdz_ansi_copySubAnsi_async
+- mdz_ansi_copySubAnsiFrom_async
+
