@@ -49,7 +49,26 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 ## Performance Comparison
 
-To be added...
+Performance comparison tables for *[mdz_ansi_find]*() give an idea about *mdz_ansi* library overall performance on different platforms compared to STL and standard C library. Modern implementationsof STL and standard C library are pretty fast, using optimized versions of memory-access functions.
+
+Following tests are executed:<br>
+- Test *1/100M*": Find 1 byte - in the end of 100M bytes long string<br>
+- Test *5/100M*": Find 5 bytes long string - in the end of 100M bytes long string<br>
+- Test *10/100M*": Find 10 bytes long string - in the end of 100M bytes long string<br>
+- Test *1K/100M*": Find 1K bytes long string - in the end of 100M bytes long string<br>
+- Test *500K/1M*": Find 500K bytes long string - in the end of 1M bytes long string<br>
+- Test *100M-100/100M*": Find "100M minus 100" bytes long string - in the end of 100M bytes long string<br>
+- Test *100M/100M*": Find 100M bytes long string - in 100M bytes long string<br>
+
+**Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
+- VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+
+| Test  | v140, mdz_ansi | v140, std::string |
+| :---:| ---: | ---: |
+| 1/100M| 1,625,025   |1,618,249|
+| 1K/1M | 9,064,272| 11,409,022 |
+| 50K/100K| 20,360,479|24,770,918|
 
 ## mdz_ansi Overview
 Wiki: [mdz_ansi Wiki]<br>
