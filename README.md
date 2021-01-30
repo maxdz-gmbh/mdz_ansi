@@ -63,12 +63,20 @@ Following tests are executed:<br>
 **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
 - VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
 (all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+clib = MDZ_FIND_CLIB (standard C library)<br>
+bmh = MDZ_FIND_BMH<br>
+brute = MDZ_FIND_BRUTE<br>
+monotone = MDZ_FIND_MONOTONE
 
-| Test  | v140, mdz_ansi | v140, std::string |
-| :---:| ---: | ---: |
-| 1/100M| 1,625,025   |1,618,249|
-| 1K/1M | 9,064,272| 11,409,022 |
-| 50K/100K| 20,360,479|24,770,918|
+| Test  | mdz_ansi, clib | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, monotone |std::string | clib|
+| :---:| ---: | ---: | ---: | ---: | ---: | ---: |
+| 1/100M|  | |  |  |  |  |
+| 5/100M|  | |  |  |  |  |
+| 10/100M|  | |  |  |  |  |
+| 1K/100M|  | |  |  |  |  |
+| 500K/1M|  | |  |  |  |  |
+| 100M-100/100M|  | |  |  |  |  |
+| 100M/100M|  | |  |  |  |  |
 
 ## mdz_ansi Overview
 Wiki: [mdz_ansi Wiki]<br>
