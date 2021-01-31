@@ -35,7 +35,7 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **2. Very little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
 
-**3. Very fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_rfind()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
+**3. Very fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
 
 **4. Flexibilty:** nearly all functions contain "left position" and "right position" parameters, to limit processed area from left and right. "ANSI" string contains more functions than according *STL*, *boost* or *glib* analogs have.
 
@@ -49,7 +49,36 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 ## Performance Comparison
 
-To be added...
+Performance comparison tables for *[mdz_ansi_find]*() give an idea about *mdz_ansi* library overall performance on different platforms compared to STL and standard C library. Modern implementationsof STL and standard C library are pretty fast, using optimized versions of memory-access functions.
+
+Following tests are executed:<br>
+- Test *1/100M*": Find 1 byte - in the end of 100M bytes long string<br>
+- Test *5/100M*": Find 5 bytes long string - in the end of 100M bytes long string<br>
+- Test *10/100M*": Find 10 bytes long string - in the end of 100M bytes long string<br>
+- Test *1K/100M*": Find 1K bytes long string - in the end of 100M bytes long string<br>
+- Test *500K/1M*": Find 500K bytes long string - in the end of 1M bytes long string<br>
+- Test *100M-100/100M*": Find "100M minus 100" bytes long string - in the end of 100M bytes long string<br>
+- Test *100M/100M*": Find 100M bytes long string - in 100M bytes long string<br>
+
+**Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
+- VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)<br>
+clib = MDZ_FIND_CLIB (standard C library)<br>
+bmh = MDZ_FIND_BMH<br>
+brute = MDZ_FIND_BRUTE<br>
+monotone = MDZ_FIND_MONOTONE
+
+| Test  | mdz_ansi, clib | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, monotone |std::string | clib|
+| :---:| ---: | ---: | ---: | ---: | ---: | ---: |
+| 1/100M|  | |  |  |  |  |
+| 5/100M|  | |  |  |  |  |
+| 10/100M|  | |  |  |  |  |
+| 1K/100M|  | |  |  |  |  |
+| 500K/1M|  | |  |  |  |  |
+| 100M-100/100M|  | |  |  |  |  |
+| 100M/100M|  | |  |  |  |  |
+
+[mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
 ## mdz_ansi Overview
 Wiki: [mdz_ansi Wiki]<br>
@@ -64,6 +93,11 @@ Our **ansi** string implementation is on par or faster than corresponding [Glib]
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
+**Test license generation:** - use [mdz_ansi Test License] page for generating test license. With this license you are able to test *mdz_ansi* library during next 14 days.
+Test license data should be used in *mdz_ansi_init()* call for library initialization.
+
+**NOTE:** All 0.x releases are kind of "beta-versions" and can be used 1) only with test-license (during test period of 14 days, with necessity to re-generate license for the next 14 days test period) and 2) without expectations of interface backward-compatibility.
+
 Several usage-scenarios are possible:
 - low-level - raw C interface, using *mdz_ansi.h* header file
 - higher-level - using *MdzAnsi* C++ "wrapper" around *mdz_ansi.h* functions
@@ -72,6 +106,7 @@ Several usage-scenarios are possible:
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
 [Performance Comparison]: #performance-comparison
+[mdz_ansi Test License]: https://maxdz.com/mdz_ansi_testlicense.php
 
 #### Code Example (low-level use)
 
@@ -82,6 +117,8 @@ Several usage-scenarios are possible:
 
 int main(int argc, char* argv[])
 {
+  /* mdz_ansi library initialization using test info retrieved after license generation (see "Test license generation" above) */
+  
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   ...
 }
