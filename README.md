@@ -66,10 +66,12 @@ Following tests are executed:
 - VC++ toolset v140<br>
 (all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
 
-monotone = MDZ_FIND_MONOTONE<br>
-clib = MDZ_FIND_CLIB (standard C library)<br>
-brute = MDZ_FIND_BRUTE<br>
-bmh = MDZ_FIND_BMH
+**Monotone test** : "long string" and "string to find" are both filled with '1's; on the last position of both strings is '2'
+
+monotone = MDZ_FIND_MONOTONE method<br>
+clib = MDZ_FIND_CLIB method (standard C library)<br>
+brute = MDZ_FIND_BRUTE method<br>
+bmh = MDZ_FIND_BMH method
 
 | Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string | clib|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
