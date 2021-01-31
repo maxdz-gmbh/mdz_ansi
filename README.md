@@ -111,7 +111,7 @@ bmh = MDZ_FIND_BMH method
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
-**Test license generation:** - use [mdz_ansi Test License] page for generating test license. With this license you are able to test *mdz_ansi* library during next 14 days.
+**Test license generation:** - use [mdz_ansi Test License] page for generating test license. Using this license you are able to test *mdz_ansi* library during next 14 days.
 Test license data should be used in *mdz_ansi_init()* call for library initialization.
 
 **NOTE:** All 0.x releases are kind of "beta-versions" and can be used 1) only with test-license (during test period of 14 days, with necessity to re-generate license for the next 14 days test period) and 2) without expectations of interface backward-compatibility.
