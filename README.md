@@ -4,7 +4,7 @@
 [mdz_ansi Overview](#mdz_ansi-Overview)<br>
 [mdz_ansi Advantages](#mdz_ansi-Advantages)<br>
 [Performance Comparison](#performance-comparison)<br>
-[mdz_ansi Overview](#mdz_ansi-Overview)<br>
+[mdz_ansi Usage](#mdz_ansi-Usage)<br>
 [Licensing info](#Licensing-info)<br>
 [Credits](#Credits)
 
@@ -12,7 +12,7 @@
 Wiki: [mdz_ansi Wiki]<br>
 file: *"mdz_ansi.h"*
 
-Please take a look at *"mdz_nsi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
+Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
 
 [mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
 
@@ -107,10 +107,7 @@ bmh = MDZ_FIND_BMH method
 
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
-## mdz_ansi Overview
-
-Our **ansi** string implementation is on par or faster than corresponding [Glib] functions and significantly faster than [STL] implementations, especially on larger sizes.<br>
-(please refer to comparison tables in [Performance Comparison])
+## mdz_ansi Usage
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
