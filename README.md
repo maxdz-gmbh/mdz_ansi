@@ -51,7 +51,8 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 Performance comparison tables for *[mdz_ansi_find]*() give an idea about *mdz_ansi* library overall performance on different platforms compared to STL and standard C library. Modern implementationsof STL and standard C library are pretty fast, using optimized versions of memory-access functions.
 
-Following tests are executed:<br>
+Following tests are executed:
+
 - Test *1/100M*": Find 1 byte - in the end of 100M bytes long string<br>
 - Test *5/100M*": Find 5 bytes long string - in the end of 100M bytes long string<br>
 - Test *10/100M*": Find 10 bytes long string - in the end of 100M bytes long string<br>
@@ -62,8 +63,9 @@ Following tests are executed:<br>
 - Test *100M/100M*": Find 100M bytes long string - in 100M bytes long string<br>
 
 **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
-- VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
-(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)<br>
+- VC++ toolset v140<br>
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+
 monotone = MDZ_FIND_MONOTONE<br>
 clib = MDZ_FIND_CLIB (standard C library)<br>
 brute = MDZ_FIND_BRUTE<br>
