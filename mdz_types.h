@@ -32,27 +32,6 @@
 #define mdz_true 1
 typedef unsigned char mdz_bool;
 
-/**
- * 3-state boolean
- */
-enum mdz_3state
-{
-  /**
-  * False
-  */
-  MDZ_3STATE_FALSE = 0,
-
-  /**
-   * True
-   */
-  MDZ_3STATE_TRUE = 1,
-
-  /**
-  * Error
-  */
-  MDZ_3STATE_ERROR = -1
-};
-
 #ifdef _WIN32
 typedef void* HANDLE;
 #endif

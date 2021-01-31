@@ -153,6 +153,9 @@ mdz_bool mdz_ansi_reserve(struct mdz_Ansi* pAnsi, size_t nNewCapacity);
  */
 mdz_bool mdz_ansi_reserveAndInit_async(struct mdz_Ansi* pAnsi, size_t nNewCapacity, char cItem, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_reserveAndInit(pAnsi, nNewCapacity, cItem) mdz_ansi_reserveAndInit_async(pAnsi, nNewCapacity, cItem, NULL)
 
 /**
@@ -234,6 +237,9 @@ size_t mdz_ansi_embedSize(const struct mdz_Ansi* pAnsi);
  */
 mdz_bool mdz_ansi_insert_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, const char* pcItems, size_t nCount, mdz_bool bReserve, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_insert(pAnsi, nLeftPos, pcItems, nCount, bReserve) mdz_ansi_insert_async(pAnsi, nLeftPos, pcItems, nCount, bReserve, NULL)
 
 /**
@@ -259,6 +265,9 @@ mdz_bool mdz_ansi_insert_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, const ch
  */
 size_t mdz_ansi_findSingle_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, char cItem, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_findSingle(pAnsi, nLeftPos, nRightPos, cItem) mdz_ansi_findSingle_async(pAnsi, nLeftPos, nRightPos, cItem, NULL)
 
 /**
@@ -285,6 +294,9 @@ size_t mdz_ansi_findSingle_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, 
   */
 size_t mdz_ansi_find_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, enum mdz_find_method enFindMethod, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_find(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod) mdz_ansi_find_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod, NULL)
 
 /**
@@ -307,6 +319,9 @@ size_t mdz_ansi_find_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t
  */
 size_t mdz_ansi_firstOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_firstOf(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_firstOf_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -328,6 +343,9 @@ size_t mdz_ansi_firstOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, siz
  */
 size_t mdz_ansi_firstNotOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_firstNotOf(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_firstNotOf_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -350,6 +368,9 @@ size_t mdz_ansi_firstNotOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, 
  */
 size_t mdz_ansi_rfindSingle_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, char cItem, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_rfindSingle(pAnsi, nLeftPos, nRightPos, cItem) mdz_ansi_rfindSingle_async(pAnsi, nLeftPos, nRightPos, cItem, NULL)
 
 /**
@@ -376,6 +397,9 @@ size_t mdz_ansi_rfindSingle_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos,
   */
 size_t mdz_ansi_rfind_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, enum mdz_find_method enFindMethod, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_rfind(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod) mdz_ansi_rfind_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod, NULL)
 
 /**
@@ -400,6 +424,9 @@ size_t mdz_ansi_rfind_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_
  */
 size_t mdz_ansi_lastOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_lastOf(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_lastOf_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -422,6 +449,9 @@ size_t mdz_ansi_lastOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size
  */
 size_t mdz_ansi_lastNotOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_lastNotOf(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_lastNotOf_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -441,6 +471,9 @@ size_t mdz_ansi_lastNotOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, s
  */
 mdz_bool mdz_ansi_removeFrom_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_removeFrom(pAnsi, nLeftPos, nCount) mdz_ansi_removeFrom_async(pAnsi, nLeftPos, nCount, NULL)
 
 /**
@@ -458,6 +491,9 @@ mdz_bool mdz_ansi_removeFrom_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size
  */
 mdz_bool mdz_ansi_remove_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_remove(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_remove_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -475,6 +511,9 @@ mdz_bool mdz_ansi_remove_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t n
  */
 mdz_bool mdz_ansi_trimLeft_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_trimLeft(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_trimLeft_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -492,6 +531,9 @@ mdz_bool mdz_ansi_trimLeft_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t
  */
 mdz_bool mdz_ansi_trimRight_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_trimRight(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_trimRight_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -509,6 +551,9 @@ mdz_bool mdz_ansi_trimRight_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_
  */
 mdz_bool mdz_ansi_trim_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_trim(pAnsi, nLeftPos, nRightPos, pcItems, nCount) mdz_ansi_trim_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, NULL)
 
 /**
@@ -529,6 +574,9 @@ mdz_bool mdz_ansi_trim_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRi
  */
 enum mdz_compare_result mdz_ansi_compare_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, const char* pcItems, size_t nCount, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_compare(pAnsi, nLeftPos, pcItems, nCount) mdz_ansi_compare_async(pAnsi, nLeftPos, pcItems, nCount, NULL)
 
 /**
@@ -551,6 +599,9 @@ enum mdz_compare_result mdz_ansi_compare_async(const struct mdz_Ansi* pAnsi, siz
  */
 mdz_bool mdz_ansi_replace_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItemsBefore, size_t nCountBefore, const char* pcItemsAfter, size_t nCountAfter, mdz_bool bReserve, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_replace(pAnsi, nLeftPos, nRightPos, pcItemsBefore, nCountBefore, pcItemsAfter, nCountAfter, bReserve) mdz_ansi_replace_async(pAnsi, nLeftPos, nRightPos, pcItemsBefore, nCountBefore, pcItemsAfter, nCountAfter, bReserve, NULL)
 
 /**
@@ -570,6 +621,9 @@ mdz_bool mdz_ansi_replace_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t 
  */
 size_t mdz_ansi_count_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcItems, size_t nCount, enum mdz_find_method enFindMethod, mdz_bool bAllowOverlapped, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_count(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod, bAllowOverlapped) mdz_ansi_count_async(pAnsi, nLeftPos, nRightPos, pcItems, nCount, enFindMethod, bAllowOverlapped, NULL)
 
 /**
@@ -588,6 +642,9 @@ size_t mdz_ansi_count_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_
  */
 size_t mdz_ansi_copySubAnsi_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nRightPos, const char* pcSeparators, size_t nSeparatorsCount, struct mdz_Ansi* pSubAnsi, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_copySubAnsi(pAnsi, nLeftPos, nRightPos, pcSeparators, nSeparatorsCount, pSubAnsi) mdz_ansi_copySubAnsi_async(pAnsi, nLeftPos, nRightPos, pcSeparators, nSeparatorsCount, pSubAnsi, NULL)
 
 /**
@@ -604,6 +661,9 @@ size_t mdz_ansi_copySubAnsi_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos,
  */
 size_t mdz_ansi_copySubAnsiFrom_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nCount, struct mdz_Ansi* pSubAnsi, struct mdz_asyncData* pAsyncData);
 
+/**
+ * Synchronous version
+ */
 #define mdz_ansi_copySubAnsiFrom(pAnsi, nLeftPos, nCount, pSubAnsi) mdz_ansi_copySubAnsiFrom_async(pAnsi, nLeftPos, nCount, pSubAnsi, NULL)
 
 #ifdef __cplusplus
