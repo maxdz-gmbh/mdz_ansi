@@ -87,6 +87,7 @@ bmh = MDZ_FIND_BMH method
 
 - MinGW/gcc toolset (32-bit)<br>
 (all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+
 | Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string.find() | clib (strstr())|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
 | 1/100M| 148,067 |  |  |  | 162,681 | 70,579 |
