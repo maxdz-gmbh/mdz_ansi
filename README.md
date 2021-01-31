@@ -64,21 +64,21 @@ Following tests are executed:<br>
 **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
 - VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
 (all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)<br>
+monotone = MDZ_FIND_MONOTONE<br>
 clib = MDZ_FIND_CLIB (standard C library)<br>
 bmh = MDZ_FIND_BMH<br>
-brute = MDZ_FIND_BRUTE<br>
-monotone = MDZ_FIND_MONOTONE
+brute = MDZ_FIND_BRUTE
 
-| Test  | mdz_ansi, clib | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, monotone |std::string | clib|
+| Test  | mdz_ansi, monotone | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, clib |std::string | clib|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
-| 1/100M|  | |  |  | 162,681 | 70,579 |
-| 5/100M|  | |  |  | 3,381,061 | 482,075 |
-| 10/100M|  | |  |  | 4,206,329 | 731,395 |
-| 100/100M|  | |  |  | 15,652,407 | 11,253,026 |
-| 1K/100M|  | |  |  | 139,808,212 | 75,808,535 |
-| 500K/1M|  | |  |  | 324,276,637 | 178,302,908 |
-| 100M-100/100M|  | |  |  | 14,150,110 | 10,383,086 |
-| 100M/100M|  | |  |  | 144,573 | 114,565 |
+| 1/100M| 70,351 | |  |  | 162,681 | 70,579 |
+| 5/100M| 407,668 | |  |  | 3,381,061 | 482,075 |
+| 10/100M| 1,334,782 | |  |  | 4,206,329 | 731,395 |
+| 100/100M| 1,333,516 | |  |  | 15,652,407 | 11,253,026 |
+| 1K/100M| 1,332,838 | |  |  | 139,808,212 | 75,808,535 |
+| 500K/1M| 13,202 | |  |  | 324,276,637 | 178,302,908 |
+| 100M-100/100M| 1,262,919 | |  |  | 14,150,110 | 10,383,086 |
+| 100M/100M| 117,970 | |  |  | 144,573 | 114,565 |
 
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
