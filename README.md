@@ -139,6 +139,10 @@ int main(int argc, char* argv[])
   
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   ...
+  
+  mdz_ansi_uninit(); /* call for un-initialization of library */
+  
+  return 0;
 }
 ```
 
@@ -166,6 +170,8 @@ int main(int argc, char* argv[])
   
   mdz_ansi_destroy(&pAnsi); // after this pAnsi should be NULL
   
+  mdz_ansi_uninit();
+
   ...
 }
 ```
@@ -197,6 +203,7 @@ int main(int argc, char* argv[])
   
   mdz_ansi_destroy(&pAnsi);
   
+  mdz_ansi_uninit();
   ...
 }
 ```
@@ -220,6 +227,7 @@ int main(int argc, char* argv[])
   
   bRet = oAnsi.appendAndReserve("cde"); // "baaaaacde" after this call
   
+  mdz_ansi_uninit();
   ...
 }
 ```
