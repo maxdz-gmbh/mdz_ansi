@@ -66,18 +66,18 @@ Following tests are executed:<br>
 (all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)<br>
 monotone = MDZ_FIND_MONOTONE<br>
 clib = MDZ_FIND_CLIB (standard C library)<br>
-bmh = MDZ_FIND_BMH<br>
-brute = MDZ_FIND_BRUTE
+brute = MDZ_FIND_BRUTE<br>
+bmh = MDZ_FIND_BMH
 
-| Test  | mdz_ansi, monotone | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, clib |std::string | clib|
+| Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string | clib|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
-| 1/100M| 70,351 | |  |  | 162,681 | 70,579 |
-| 5/100M| 407,668 | |  |  | 3,381,061 | 482,075 |
-| 10/100M| 1,334,782 | |  |  | 4,206,329 | 731,395 |
-| 100/100M| 1,333,516 | |  |  | 15,652,407 | 11,253,026 |
-| 1K/100M| 1,332,838 | |  |  | 139,808,212 | 75,808,535 |
-| 500K/1M| 13,202 | |  |  | 324,276,637 | 178,302,908 |
-| 100M-100/100M| 1,262,919 | |  |  | 14,150,110 | 10,383,086 |
+| 1/100M| 70,351 |  |  |  | 162,681 | 70,579 |
+| 5/100M| 407,668 | 460,052 |  |  | 3,381,061 | 482,075 |
+| 10/100M| 1,334,782 | 707,712 |  |  | 4,206,329 | 731,395 |
+| 100/100M| 1,333,516 | 10,914,646 |  |  | 15,652,407 | 11,253,026 |
+| 1K/100M| 1,332,838 | 70,179,989 |  |  | 139,808,212 | 75,808,535 |
+| 500K/1M| 13,202 | 166,409,422 |  |  | 324,276,637 | 178,302,908 |
+| 100M-100/100M| 1,262,919 | 10,884,012 |  |  | 14,150,110 | 10,383,086 |
 | 100M/100M| 117,970 | |  |  | 144,573 | 114,565 |
 
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
