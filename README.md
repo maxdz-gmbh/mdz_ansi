@@ -73,7 +73,7 @@ clib = MDZ_FIND_CLIB method (standard C library)<br>
 brute = MDZ_FIND_BRUTE method<br>
 bmh = MDZ_FIND_BMH method
 
-| Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string | clib|
+| Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string.find | clib (strstr)|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
 | 1/100M| 70,351 |  |  |  | 162,681 | 70,579 |
 | 5/100M| 407,668 | 460,052 | 3,045,869 | 781,655 | 3,381,061 | 482,075 |
