@@ -62,7 +62,7 @@ Following tests are executed:<br>
 
 **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
 - VC++ toolset v140, from Windows Vista / Windows Server 2008<br>
-(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)<br>
 clib = MDZ_FIND_CLIB (standard C library)<br>
 bmh = MDZ_FIND_BMH<br>
 brute = MDZ_FIND_BRUTE<br>
