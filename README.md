@@ -78,6 +78,8 @@ monotone = MDZ_FIND_MONOTONE
 | 100M-100/100M|  | |  |  |  |  |
 | 100M/100M|  | |  |  |  |  |
 
+[mdz_ascii_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find
+
 ## mdz_ansi Overview
 Wiki: [mdz_ansi Wiki]<br>
 file: *"mdz_ansi.h"*
