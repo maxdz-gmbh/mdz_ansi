@@ -9,6 +9,12 @@
 [Credits](#Credits)
 
 ## mdz_ansi Overview
+Wiki: [mdz_ansi Wiki]<br>
+file: *"mdz_ansi.h"*
+
+Please take a look at *"mdz_nsi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
+
+[mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
 
 [mdz_ansi] - is a very lightweight, versatile and speedy C  library for handling 1-byte (ASCII/ANSI) strings, developed by [maxdz Software GmbH]. Source code of library is highly-portable, conforms to ANSI C 89/90 Standard.
 
@@ -102,12 +108,6 @@ bmh = MDZ_FIND_BMH method
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
 ## mdz_ansi Overview
-Wiki: [mdz_ansi Wiki]<br>
-file: *"mdz_ansi.h"*
-
-Please take a look at *"mdz_nsi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
-
-[mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
 
 Our **ansi** string implementation is on par or faster than corresponding [Glib] functions and significantly faster than [STL] implementations, especially on larger sizes.<br>
 (please refer to comparison tables in [Performance Comparison])
