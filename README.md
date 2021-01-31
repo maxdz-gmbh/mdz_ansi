@@ -63,8 +63,6 @@ Following tests are executed:
 - Test *100M/100M*": Find 100M bytes long string - in 100M bytes long string<br>
 
 **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
-- VC++ toolset v140<br>
-(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
 
 **Monotone test** : "long string" and "string to find" are both filled with '1's; on the last position of both strings is '2'
 
@@ -72,6 +70,9 @@ monotone = MDZ_FIND_MONOTONE method<br>
 clib = MDZ_FIND_CLIB method (standard C library)<br>
 brute = MDZ_FIND_BRUTE method<br>
 bmh = MDZ_FIND_BMH method
+
+- VC++ toolset v140 (32-bit)<br>
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
 
 | Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string.find() | clib (strstr())|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
@@ -83,6 +84,19 @@ bmh = MDZ_FIND_BMH method
 | 500K/1M| 13,202 | 166,409,422 | 323,375,345 | 9,411 | 324,276,637 | 178,302,908 |
 | 100M-100/100M| 1,262,919 | 10,884,012 | 14,182,350 | 1,066,737 | 14,150,110 | 10,383,086 |
 | 100M/100M| 117,970 | |  |  | 144,573 | 114,565 |
+
+- MinGW/gcc toolset (32-bit)<br>
+(all numbers are in microseconds measured using *QueryPerformanceCounter()* in main execution thread)
+| Test  | mdz_ansi, monotone | mdz_ansi, clib | mdz_ansi, brute |  mdz_ansi, bmh |std::string.find() | clib (strstr())|
+| :---:| ---: | ---: | ---: | ---: | ---: | ---: |
+| 1/100M| 148,067 |  |  |  | 162,681 | 70,579 |
+| 5/100M| 534,070 | 1,599,882 | 6,825,862 | 784,326 | 3,381,061 | 482,075 |
+| 10/100M| 551,404 | 3,635,378 | 7,898,385 | 783,832 | 4,206,329 | 731,395 |
+| 100/100M| 550,701 | 32,447,796 | 20,451,496 | 786,006 | 15,652,407 | 11,253,026 |
+| 1K/100M| 551,213 | 348,052,489 | 117,762,194 | 784,335 | 139,808,212 | 75,808,535 |
+| 500K/1M| 7,851 | 814,620,053 | 246,574,213 | 6,263 | 324,276,637 | 178,302,908 |
+| 100M-100/100M| 997,729 | 33,028,357 | 11,705,985| 456,680 | 14,150,110 | 10,383,086 |
+| 100M/100M| 328,564 | |  |  | 144,573 | 114,565 |
 
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
