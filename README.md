@@ -55,6 +55,7 @@ Following tests are executed:<br>
 - Test *1/100M*": Find 1 byte - in the end of 100M bytes long string<br>
 - Test *5/100M*": Find 5 bytes long string - in the end of 100M bytes long string<br>
 - Test *10/100M*": Find 10 bytes long string - in the end of 100M bytes long string<br>
+- Test *100/100M*": Find 100 bytes long string - in the end of 100M bytes long string<br>
 - Test *1K/100M*": Find 1K bytes long string - in the end of 100M bytes long string<br>
 - Test *500K/1M*": Find 500K bytes long string - in the end of 1M bytes long string<br>
 - Test *100M-100/100M*": Find "100M minus 100" bytes long string - in the end of 100M bytes long string<br>
@@ -70,13 +71,14 @@ monotone = MDZ_FIND_MONOTONE
 
 | Test  | mdz_ansi, clib | mdz_ansi, bmh | mdz_ansi, brute |  mdz_ansi, monotone |std::string | clib|
 | :---:| ---: | ---: | ---: | ---: | ---: | ---: |
-| 1/100M|  | |  |  |  |  |
-| 5/100M|  | |  |  |  |  |
-| 10/100M|  | |  |  |  |  |
-| 1K/100M|  | |  |  |  |  |
-| 500K/1M|  | |  |  |  |  |
-| 100M-100/100M|  | |  |  |  |  |
-| 100M/100M|  | |  |  |  |  |
+| 1/100M|  | |  |  | 162,680 | 70,579 |
+| 5/100M|  | |  |  | 3,381,061 | 482,075 |
+| 10/100M|  | |  |  | 4,206,329 | 731,395 |
+| 100/100M|  | |  |  | 15,652,407 | 11,253,026 |
+| 1K/100M|  | |  |  | 139,808,212 | 75,808,535 |
+| 500K/1M|  | |  |  | 324,276,637 | 178,302,908 |
+| 100M-100/100M|  | |  |  | 14,150,110 | 10,383,086 |
+| 100M/100M|  | |  |  | 144,573 | 114,565 |
 
 [mdz_ansi_find]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi_find_async
 
