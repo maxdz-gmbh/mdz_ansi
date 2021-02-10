@@ -148,8 +148,7 @@ For **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
-**Test license generation:** - use [mdz_ansi Test License] page for generating test license. Using this license you are able to test *mdz_ansi* library during next 14 days.
-Test license data should be used in *mdz_ansi_init()* call for library initialization.
+**Test license generation:** - in order to obtain free test-license, please proceed to our Shop page [maxdz Shop] and register an account. After registration you will be able to obtain free 14-days test-licenses for our products using "Obtain for free" button. 
 
 **NOTE:** All 0.x releases are kind of "beta-versions" and can be used 1) only with test-license (during test period of 14 days, with necessity to re-generate license for the next 14 days test period) and 2) without expectations of interface backward-compatibility.
 
@@ -161,7 +160,7 @@ Several usage-scenarios are possible:
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
 [Performance Comparison]: #performance-comparison
-[mdz_ansi Test License]: https://maxdz.com/mdz_ansi_testlicense.php
+[maxdz Shop]: https://maxdz.com/shop.php
 
 #### Code Example (low-level use)
 
