@@ -274,12 +274,3 @@ int main(int argc, char* argv[])
 Use of **mdz_ansi** library is regulated by license agreement in *LICENSE.txt*
 
 Basically private non-commercial "test" usage is unrestricted. Commercial usage of library (incl. its source code) will be regulated by according license agreement.
-
-## Credits
-[Maksym Dzyubenko] - library implementation, porting on platforms, participation in unit-tests and performance-tests<br>
-[Diana Pukhlitska] - participation in unit-tests (VC++, Windows) and performance-tests (VC++, Windows)<br>
-[Oleksiy Dzyubenko] - participation in unit-tests (VC++, Windows)
-
-[Diana Pukhlitska]: https://github.com/PukhlitskaDi
-[Oleksiy Dzyubenko]: https://github.com/dzyubenko
-[Maksym Dzyubenko]: https://github.com/mdzyubenko
