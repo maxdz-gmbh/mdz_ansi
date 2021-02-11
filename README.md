@@ -37,11 +37,11 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 ## mdz_ansi Advantages
 
-**1. Very high portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
+**1. High portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
 
-**2. Very little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
+**2. Little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
 
-**3. Very fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
+**3. Fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
 
 **4. Flexibilty:** nearly all functions contain "left position" and "right position" parameters, to limit processed area from left and right. "ANSI" string contains more functions than according *STL*, *boost* or *glib* analogs have.
 
@@ -51,7 +51,9 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **7. Attached usage:** containers should not necessarily use dynamically-allocated memory - which may be not available on your embedded system (or if malloc()/free() are forbidden to use in you safety-critical software). Just attach container/data to your statically-allocated memory and use all containers functionality.
 
-**8. Asynchronous execution:** almost all functions can be executed asynchronously
+**8. Cache-friendly:** it is possible to keep controlling and data parts together in memory using "embedded part".
+
+**9. Asynchronous execution:** almost all functions can be executed asynchronously
 
 ## Performance Comparison
 
