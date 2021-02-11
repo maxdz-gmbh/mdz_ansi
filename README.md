@@ -195,21 +195,19 @@ After library initialization call *[mdz_ansi_create]*() for **ansi** creation. T
 
 int main(int argc, char* argv[])
 {
-  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");   /* initialize pAnsi */
   
-  // initialize pAnsi
-  
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
   ...
   ...
-  // use pAnsi
+  /* use pAnsi */
   ...
   ...
-  // destroy pAnsi
+  /* destroy pAnsi */
   
-  mdz_ansi_destroy(&pAnsi); // after this pAnsi should be NULL
+  mdz_ansi_destroy(&pAnsi); /* after this pAnsi should be NULL */
   
-  mdz_ansi_uninit();
+  mdz_ansi_uninit(); /* uninitialize pAnsi */
 
   ...
 }
@@ -224,19 +222,19 @@ int main(int argc, char* argv[])
 {
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
 
-  // reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5.
+  /* reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5. */
   
-  bRet = mdz_ansi_reserveAndInit(pAnsi, 5, 'a'); // "aaaaa" after this call
+  bRet = mdz_ansi_reserveAndInit(pAnsi, 5, 'a'); /* "aaaaa" after this call */
   
-  // insert 'b' in front position with auto-reservation if necessary
+  /* insert 'b' in front position with auto-reservation if necessary */
   
-  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true); // "baaaaa" after this call
+  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true); /* "baaaaa" after this call */
   
-  // append string with "cde" with auto-reservation if necessary
+  /* append string with "cde" with auto-reservation if necessary */
   
-  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true); // "baaaaacde" after this call
+  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true); /* "baaaaacde" after this call */
   
   ...
   
