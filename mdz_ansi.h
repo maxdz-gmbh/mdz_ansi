@@ -108,14 +108,16 @@ void mdz_ansi_clear(struct mdz_Ansi* pAnsi);
  * \param pAnsi - pointer to string returned by mdz_ansi_create() or mdz_ansi_create_attached()
  * \param pData - pointer to pre-allocated data to attach
  * \param nOffsetFromStart - position in pre-allocated data to attach from. Can be > 0
- * \param nCapacity - full capacity pre-allocated data in items
- * \param enAttachType - type of attachment. Only MDZ_ATTACH_ZEROSIZE and MDZ_ATTACH_SIZE_TERMINATOR are allowed
+ * \param nCapacity - full capacity of pre-allocated data in items
+ * \param enAttachType - type of attachment. 0 is expected at position pData[nOffsetFromStart] if MDZ_ATTACH_ZEROSIZE. 0 is expected at position pData[nCapacity] if MDZ_ATTACH_SIZE_TERMINATOR
  * \return:
  * mdz_false - if pAnsi == NULL
- * mdz_false - if pData == NULL (MDZ_ERROR_DATA), or nOffsetFromStart >= nCapacity (MDZ_ERROR_OFFSET), or invalid enAttachType (MDZ_ERROR_ATTACHTYPE)
+ * mdz_false - if pData == NULL (MDZ_ERROR_DATA), or nOffsetFromStart >= nCapacity (MDZ_ERROR_OFFSET)
+ * mdz_false - if enAttachType is MDZ_ATTACH_ZEROSIZE or MDZ_ATTACH_SIZE_TERMINATOR but 0 is not found at expected position (MDZ_ERROR_ATTACH_TERMINATOR)
  * mdz_true  - operation succeeded
  * \examples:
- * <text>You read some text data with BOM. BOM is 3 bytes, full read data size (including BOM) is 100 bytes. In that case nOffsetFromStart is 3 and nCapacity is 100 - to attach this data and process it.</text>
+ * <text>You read some text data with BOM and zero-terminator. BOM is 3 bytes, full read data size (including BOM and terminator) is 101 bytes.
+ * In that case nOffsetFromStart is 3, nCapacity is 101, enAttachType is MDZ_ATTACH_SIZE_TERMINATOR - to attach this data for further processing.</text>
  */
 mdz_bool mdz_ansi_attachData(struct mdz_Ansi* pAnsi, const char* pData, size_t nOffsetFromStart, size_t nCapacity, enum mdz_attach_type enAttachType);
 
@@ -466,7 +468,7 @@ size_t mdz_ansi_lastNotOf_async(const struct mdz_Ansi* pAnsi, size_t nLeftPos, s
  * \param pAsyncData - pointer to shared async data for asynchronous call, or NULL if call should be synchronous
  * \return:
  * mdz_false - if pAnsi == NULL
- * mdz_true  - if nCount == 0 and pcItems[0] == 0 (MDZ_ERROR_ZEROCOUNT), or nCount is too big (MDZ_ERROR_BIGCOUNT), or nLeftPos + nCount > Size (MDZ_ERROR_BIGLEFT). No removes are made
+ * mdz_true  - if nCount == 0  (MDZ_ERROR_ZEROCOUNT), or nCount is too big (MDZ_ERROR_BIGCOUNT), or nLeftPos + nCount > Size (MDZ_ERROR_BIGLEFT). No removes are made
  * mdz_true  - operation succeeded
  */
 mdz_bool mdz_ansi_removeFrom_async(struct mdz_Ansi* pAnsi, size_t nLeftPos, size_t nCount, struct mdz_asyncData* pAsyncData);

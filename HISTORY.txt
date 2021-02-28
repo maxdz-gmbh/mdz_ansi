@@ -1,5 +1,9 @@
-28.01.2021 (thu): Release 0.0.1
--------------------------------
+01.03.2021 (mon): Release 0.2
+-----------------------------
+- correction in "attach" functions
+
+28.01.2021 (thu): Release 0.1
+-----------------------------
 
 Added functions:
 
