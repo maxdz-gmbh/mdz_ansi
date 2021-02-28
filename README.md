@@ -37,11 +37,11 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 ## mdz_ansi Advantages
 
-**1. Very high portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
+**1. High portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
 
-**2. Very little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
+**2. Little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
 
-**3. Very fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
+**3. Fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
 
 **4. Flexibilty:** nearly all functions contain "left position" and "right position" parameters, to limit processed area from left and right. "ANSI" string contains more functions than according *STL*, *boost* or *glib* analogs have.
 
@@ -51,7 +51,9 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **7. Attached usage:** containers should not necessarily use dynamically-allocated memory - which may be not available on your embedded system (or if malloc()/free() are forbidden to use in you safety-critical software). Just attach container/data to your statically-allocated memory and use all containers functionality.
 
-**8. Asynchronous execution:** almost all functions can be executed asynchronously
+**8. Cache-friendly:** it is possible to keep controlling and data parts together in memory using "embedded part".
+
+**9. Asynchronous execution:** almost all functions can be executed asynchronously
 
 ## Performance Comparison
 
@@ -148,7 +150,7 @@ For **Windows 10 (64-bit)** on *Intel i5-6600 @ 3.30GHz (4 cores/4 threads)*<br>
 
 **ansi** is implemented with strict input parameters checking. It means *mdz_false* or some other error indication will be returned if one or several input parameters are invalid - even if such an invalidity doesn't lead to inconsistence (for example adding or removing 0 items).<br>
 
-**Test license generation:** - use [mdz_ansi Test License] page for generating test license. Using this license you are able to test *mdz_ansi* library during next 14 days.
+**Test license generation:** - in order to get free test-license, please proceed to our Shop page [maxdz Shop] and register an account. After registration you will be able to obtain free 14-days test-licenses for our products using "Obtain for free" button. 
 Test license data should be used in *mdz_ansi_init()* call for library initialization.
 
 **NOTE:** All 0.x releases are kind of "beta-versions" and can be used 1) only with test-license (during test period of 14 days, with necessity to re-generate license for the next 14 days test period) and 2) without expectations of interface backward-compatibility.
@@ -161,7 +163,7 @@ Several usage-scenarios are possible:
 [Glib]: https://en.wikipedia.org/wiki/GLib
 [STL]: https://en.wikipedia.org/wiki/Standard_Template_Library
 [Performance Comparison]: #performance-comparison
-[mdz_ansi Test License]: https://maxdz.com/mdz_ansi_testlicense.php
+[maxdz Shop]: https://maxdz.com/shop.php
 
 #### Code Example (low-level use)
 
@@ -193,21 +195,19 @@ After library initialization call *[mdz_ansi_create]*() for **ansi** creation. T
 
 int main(int argc, char* argv[])
 {
-  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
+  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");   /* initialize pAnsi */
   
-  // initialize pAnsi
-  
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
   ...
   ...
-  // use pAnsi
+  /* use pAnsi */
   ...
   ...
-  // destroy pAnsi
+  /* destroy pAnsi */
   
-  mdz_ansi_destroy(&pAnsi); // after this pAnsi should be NULL
+  mdz_ansi_destroy(&pAnsi); /* after this pAnsi should be NULL */
   
-  mdz_ansi_uninit();
+  mdz_ansi_uninit(); /* uninitialize pAnsi */
 
   ...
 }
@@ -222,19 +222,19 @@ int main(int argc, char* argv[])
 {
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); // create ansi-string
+  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
 
-  // reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5.
+  /* reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5. */
   
-  bRet = mdz_ansi_reserveAndInit(pAnsi, 5, 'a'); // "aaaaa" after this call
+  bRet = mdz_ansi_reserveAndInit(pAnsi, 5, 'a'); /* "aaaaa" after this call */
   
-  // insert 'b' in front position with auto-reservation if necessary
+  /* insert 'b' in front position with auto-reservation if necessary */
   
-  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true); // "baaaaa" after this call
+  bRet = mdz_ansi_insert(pAnsi, 0, "b", 1, mdz_true); /* "baaaaa" after this call */
   
-  // append string with "cde" with auto-reservation if necessary
+  /* append string with "cde" with auto-reservation if necessary */
   
-  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true); // "baaaaacde" after this call
+  bRet = mdz_ansi_insert(pAnsi, pAnsi->m_nSize - 1, "cde", 3, mdz_true); /* "baaaaacde" after this call */
   
   ...
   
@@ -274,12 +274,3 @@ int main(int argc, char* argv[])
 Use of **mdz_ansi** library is regulated by license agreement in *LICENSE.txt*
 
 Basically private non-commercial "test" usage is unrestricted. Commercial usage of library (incl. its source code) will be regulated by according license agreement.
-
-## Credits
-[Maksym Dzyubenko] - library implementation, porting on platforms, participation in unit-tests and performance-tests<br>
-[Diana Pukhlitska] - participation in unit-tests (VC++, Windows) and performance-tests (VC++, Windows)<br>
-[Oleksiy Dzyubenko] - participation in unit-tests (VC++, Windows)
-
-[Diana Pukhlitska]: https://github.com/PukhlitskaDi
-[Oleksiy Dzyubenko]: https://github.com/dzyubenko
-[Maksym Dzyubenko]: https://github.com/mdzyubenko
