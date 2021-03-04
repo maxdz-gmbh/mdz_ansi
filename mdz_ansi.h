@@ -32,7 +32,7 @@ extern "C"
  */
 
 /**
- * Initializes ansi library. This function should be caled before any other function of the library.
+ * Initializes ansi library. This function should be called before any other function of the library.
  * \param pFirstNameHash - user first name hash code
  * \param pLastNameHash - user last name hash code
  * \param pEmailHash - user e-mail hash code
@@ -109,7 +109,7 @@ void mdz_ansi_clear(struct mdz_Ansi* pAnsi);
  * \param pData - pointer to pre-allocated data to attach
  * \param nOffsetFromStart - position in pre-allocated data to attach from. Can be > 0
  * \param nCapacity - full capacity of pre-allocated data in items
- * \param enAttachType - type of attachment. 0 is expected at position pData[nOffsetFromStart] if MDZ_ATTACH_ZEROSIZE. 0 is expected at position pData[nCapacity] if MDZ_ATTACH_SIZE_TERMINATOR
+ * \param enAttachType - type of attachment. 0 is expected at position pData[nOffsetFromStart] if MDZ_ATTACH_ZEROSIZE. 0 is expected at position pData[nCapacity - 1] if MDZ_ATTACH_SIZE_TERMINATOR
  * \return:
  * mdz_false - if pAnsi == NULL
  * mdz_false - if pData == NULL (MDZ_ERROR_DATA), or nOffsetFromStart >= nCapacity (MDZ_ERROR_OFFSET)
