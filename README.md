@@ -16,7 +16,7 @@ Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed f
 
 [mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
 
-[mdz_ansi] - is a very lightweight, versatile and speedy C  library for handling 1-byte (ASCII/ANSI) strings, developed by [maxdz Software GmbH]. Source code of library is highly-portable, conforms to ANSI C 89/90 Standard.
+[mdz_ansi] - is a very lightweight, versatile and speedy C  library for handling single-byte (ASCII/ANSI) strings, developed by [maxdz Software GmbH]. Source code of library is highly-portable, conforms to ANSI C 89/90 Standard.
 
 Only shared/dynamically loaded libraries (*.so* and *.dll* files with import libraries) are available for evaluation testing purposes. Static libraries are covered by our commercial licenses.
 
