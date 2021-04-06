@@ -174,7 +174,7 @@ Several usage-scenarios are possible:
 
 int main(int argc, char* argv[])
 {
-  /* mdz_ansi library initialization using test info retrieved after license generation (see "Test license generation" above) */
+  /* mdz_ansi library initialization using license info retrieved after license generation (see "Test license generation" above) */
   
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   ...
@@ -195,9 +195,9 @@ After library initialization call *[mdz_ansi_create]*() for **ansi** creation. T
 
 int main(int argc, char* argv[])
 {
-  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");   /* initialize pAnsi */
+  mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");   /* initialize mdz_ansi library */
   
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
+  struct mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
   ...
   ...
   /* use pAnsi */
@@ -207,7 +207,7 @@ int main(int argc, char* argv[])
   
   mdz_ansi_destroy(&pAnsi); /* after this pAnsi should be NULL */
   
-  mdz_ansi_uninit(); /* uninitialize pAnsi */
+  mdz_ansi_uninit(); /* un-initialize mdz_ansi library */
 
   ...
 }
@@ -222,7 +222,7 @@ int main(int argc, char* argv[])
 {
   mdz_bool bRet = mdz_ansi_init("<first-name-hash>", "<last-name-hash>", "<email-hash>", "<license-hash>");
   
-  mdz_Ansi* pAnsi = mdz_ansi_create(0); /* create ansi-string */
+  struct mdz_Ansi* pAnsi = mdz_ansi_create(0);
 
   /* reserve 5 elements, set them into 'a'. After this Capacity of string is 6 (includes terminating 0) and Size is 5. */
   
