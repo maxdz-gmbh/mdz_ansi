@@ -14,7 +14,7 @@ file: *"mdz_ansi.h"*
 
 Please take a look at *"mdz_ansi.h"* file or [mdz_ansi Wiki] site for detailed functions descriptions.
 
-[mdz_ascii Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
+[mdz_ansi Wiki]: https://github.com/maxdz-gmbh/mdz_ansi/wiki/mdz_ansi-overview
 
 [mdz_ansi] - is a very lightweight, versatile and speedy C  library for handling single-byte (ASCII/ANSI) strings, developed by [maxdz Software GmbH]. Source code of library is highly-portable, conforms to ANSI C 89/90 Standard.
 
@@ -39,7 +39,7 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **1. High portability:** the whole code conforms to ANSI C 89/90 Standard. Multithreading/asynchronous part is POSIX compatible (under UNIX/Linux).
 
-**2. Little dependencies:** basically *mdz_containers* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code withouth any further dependencies except standard plattform libraries/APIs.
+**2. Little dependencies:** basically *mdz_ansi* functions are only dependend on standard C-library memory-management/access functions. Multithreading part is dependend on POSIX *pthreads* API (under UNIX/Linux) and old process control/synchronization API (from Windows 2000). It means you can use library in your code without any further dependencies except standard platform libraries/APIs.
 
 **3. Fast:** comparison tables for *mdz_ansi_find()*, *mdz_ansi_firstOf()* are here [Performance Comparison](#performance-comparison). There will be more tables/info later.
 
@@ -47,9 +47,9 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 **5. Extended error-checking:** all functions preserve internal error-code pointing the problem. It is possible to use strict error-checking (when all preserved error-codes should be *MDZ_ERROR_NONE*) or "relaxed"-checking - when only returned *mdz_false* will indicate error.
 
-**6. Extended control:** containers do only explicit operations. It means for example, when "insert" function is called with auto-reservation flag set in *mdz_false* - it will return error if there is not enough capacity in container. No implicit reservations will be made.
+**6. Extended control:** *mdz_ansi* functions do only explicit operations. It means for example, when "insert" function is called with auto-reservation flag set in *mdz_false* - it will return error if there is not enough capacity in string. No implicit reservations will be made.
 
-**7. Attached usage:** containers should not necessarily use dynamically-allocated memory - which may be not available on your embedded system (or if malloc()/free() are forbidden to use in you safety-critical software). Just attach container/data to your statically-allocated memory and use all containers functionality.
+**7. Attached usage:** *mdz_ansi* should not necessarily use dynamically-allocated memory - which may be not available on your embedded system (or if malloc()/free() are forbidden to use in you safety-critical software). Just attach container/data to your statically-allocated memory and use all string functionality.
 
 **8. Cache-friendly:** it is possible to keep controlling and data parts together in memory using "embedded part".
 
