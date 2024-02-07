@@ -1,3 +1,5 @@
+**January 2024 NOTE:** This repo is obsolete. Please use [mdz_string] project/repo instead.
+
 **NOTE:** All 0.x releases are kind of "alpha-versions" without expectations of interface backward-compatibility.
 
 ## Table of Contents
@@ -34,6 +36,7 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 [mdz_ansi]: https://github.com/maxdz-gmbh/mdz_ansi
 [maxdz Software GmbH]: https://maxdz.com/
+[mdz_string]: https://github.com/maxdz-gmbh/mdz_string
 
 ## mdz_ansi Advantages
 
