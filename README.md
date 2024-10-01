@@ -1,4 +1,4 @@
-**February 2024 NOTE:** This repo is obsolete. Please use following repos instead:
+**February 2024 NOTE:** This repo is obsolete. Please use following repos for processing single-byte (ASCII/ANSI) strings instead:
 - [mdz_ansi_alg] for string processing algorithms
 - [mdz_ansi_16] for short attached strings
 - [mdz_ansi_dyn] for long dynamically-allocated strings
