@@ -1,4 +1,4 @@
-**February 2024 NOTE:** This repo is obsolete. Please use [mdz_string] project/repo instead.
+**February 2024 NOTE:** This repo is obsolete. Please use [mdz_ansi_alg] for string processing algorithms, [mdz_ansi_16] for short attached strings or [mdz_ansi_dyn] for long dynamically-allocated strings repos instead.
 
 **NOTE:** All 0.x releases are kind of "alpha-versions" without expectations of API backward-compatibility.
 
@@ -36,7 +36,9 @@ Only shared/dynamically loaded libraries (*.so* and *.dll* files with import lib
 
 [mdz_ansi]: https://github.com/maxdz-gmbh/mdz_ansi
 [maxdz Software GmbH]: https://maxdz.com/
-[mdz_string]: https://github.com/maxdz-gmbh/mdz_string
+[mdz_ansi_alg]: https://github.com/maxdz-gmbh/mdz_ansi_alg
+[mdz_ansi_16]: https://github.com/maxdz-gmbh/mdz_ansi_16
+[mdz_ansi_dyn]: https://github.com/maxdz-gmbh/mdz_ansi_dyn
 
 ## mdz_ansi Advantages
 
