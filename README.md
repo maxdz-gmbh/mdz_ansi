@@ -1,4 +1,7 @@
-**February 2024 NOTE:** This repo is obsolete. Please use [mdz_ansi_alg] for string processing algorithms, [mdz_ansi_16] for short attached strings or [mdz_ansi_dyn] for long dynamically-allocated strings repos instead.
+**February 2024 NOTE:** This repo is obsolete. Please use following repos instead:
+- [mdz_ansi_alg] for string processing algorithms
+- [mdz_ansi_16] for short attached strings
+- [mdz_ansi_dyn] for long dynamically-allocated strings
 
 **NOTE:** All 0.x releases are kind of "alpha-versions" without expectations of API backward-compatibility.
 
